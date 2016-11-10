@@ -1,0 +1,11 @@
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/service/IUserService.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/dao/impl/AbstractBaseMongoTemplete.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/dao/IUserDao.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/dao/impl/UserDao.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/dao/impl/UserDaoImp.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/controller/UserController.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/model/UserModel.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/service/impl/UserService.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/controller/MongoTest.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/util/MybatisUtil.java
+/Users/PC/Desktop/project/mongodb/src/main/java/com/augmentum/model/User.java

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	 <script src="../static/jquery.min.js"></script>
+ 	 <script src="../static/underscore-min.js"></script>
+  	 <script src="../static/user.js"></script>
+</head>
+<body>
+	<div align="center">
+		<a href="./add.html">添加用户</a>
+	</div>
+	<table id="table" border="2" align="center">
+		<thead>
+			<tr>
+				<th>用户</th>
+				<th>密码</th>
+			</tr>
+		</thead>
+		<tbody class="user-list">
+		
+		</tbody>
+	</table>
+	
+	<img src="../static/1.png" />
+	
+        <script id="user-tpl" type="text/template">
+            <%_.each(data, function(item, i) { %>
+				<tr class="user-row">
+					<td><%=item.userName %></td>
+					<td><%=item.password %></td>
+
+				</tr>
+            <%}); %>
+        </script>
+        
+</body>
+</html>

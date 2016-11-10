@@ -1,0 +1,9 @@
+com/augmentum/dao/IUserDao.class
+com/augmentum/controller/UserController.class
+com/augmentum/dao/impl/AbstractBaseMongoTemplete.class
+com/augmentum/dao/impl/UserDaoImp.class
+com/augmentum/service/IUserService.class
+com/augmentum/controller/MongoTest.class
+com/augmentum/model/User.class
+com/augmentum/service/impl/UserService.class
+com/augmentum/model/UserModel.class

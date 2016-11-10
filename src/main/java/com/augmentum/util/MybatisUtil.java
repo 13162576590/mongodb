@@ -1,0 +1,106 @@
+//package com.augmentum.util;
+//
+//import java.io.IOException;
+//import java.io.Reader;
+//import java.sql.Connection;
+//
+//import javax.annotation.Resource;
+//
+//import org.apache.ibatis.io.Resources;
+//import org.apache.ibatis.session.SqlSession;
+//import org.apache.ibatis.session.SqlSessionFactory;
+//import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+//
+//import com.augmentum.dao.IUserDao;
+//import com.augmentum.dao.impl.UserDao;
+//import com.augmentum.model.User;
+//
+///**
+// * 工具类
+// * @author AdminTC
+// */
+//public class MybatisUtil {
+//	private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<SqlSession>();
+//	private static SqlSessionFactory sqlSessionFactory;
+//	/**
+//	 * 加载位于src/mybatis.xml配置文件
+//	 */
+//	static{
+//		try {
+//			Reader reader = Resources.getResourceAsReader("mybatis.xml");
+//			sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//			throw new RuntimeException(e);
+//		}
+//	}
+//	/**
+//	 * 禁止外界通过new方法创建 
+//	 */
+//	private MybatisUtil(){}
+//	/**
+//	 * 获取SqlSession
+//	 */
+//	public static SqlSession getSqlSession(){
+//		//从当前线程中获取SqlSession对象
+//		SqlSession sqlSession = threadLocal.get();
+//		//如果SqlSession对象为空
+//		if(sqlSession == null){
+//			//在SqlSessionFactory非空的情况下，获取SqlSession对象
+//			System.out.println("sqlSessionFactory:" + sqlSessionFactory);
+//			sqlSession = sqlSessionFactory.openSession();
+//			System.out.println("sqlSession:" + sqlSession);
+//			//将SqlSession对象与当前线程绑定在一起
+//			threadLocal.set(sqlSession);
+//		}
+//		//返回SqlSession对象
+//		return sqlSession;
+//	}
+//	/**
+//	 * 关闭SqlSession与当前线程分开
+//	 */
+//	public static void closeSqlSession(){
+//		//从当前线程中获取SqlSession对象
+//		SqlSession sqlSession = threadLocal.get();
+//		//如果SqlSession对象非空
+//		if(sqlSession != null){
+//			//关闭SqlSession对象
+//			sqlSession.close();
+//			//分开当前线程与SqlSession对象的关系，目的是让GC尽早回收
+//			threadLocal.remove();
+//		}
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	/**
+//	 * 测试
+//	 */
+//	public static void main(String[] args) {
+//		Connection conn = MybatisUtil.getSqlSession().getConnection();
+//		System.out.println(conn!=null?"连接成功":"连接失败");
+//	    IUserDao userDao = new UserDao();
+////	    User user = new User();
+////	    user.setName("1");
+////	    user.setAddress("1");
+////		userDao.saveUser(user);
+//	    User user = userDao.findById("2");
+//	    System.out.println(user);
+//	}
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
